@@ -1,0 +1,23 @@
+{
+    "name": "@startup/db",
+    "version": "0.0.0",
+    "private": true,
+    "exports": {
+        ".": "./src/index.ts",
+        "./schema": "./src/schema.ts"
+    },
+    "scripts": {
+        "generate": "drizzle-kit generate:pg",
+        "push": "drizzle-kit push:pg"
+    },
+    "dependencies": {
+        "drizzle-orm": "^0.29.3",
+        "postgres": "^3.4.3"
+    },
+    "devDependencies": {
+        "@startup/tsconfig": "*",
+        "@types/node": "^20.19.25",
+        "drizzle-kit": "^0.20.13",
+        "typescript": "^5.3.3"
+    }
+}

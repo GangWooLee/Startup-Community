@@ -1,180 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Startup Community Platform
 
-## Getting Started
+차세대 스타트업 생태계 구축을 위한 하이브리드 플랫폼입니다.
 
-First, run the development server:
+## 📖 프로젝트 소개
+
+### “누구나 쉽게 창업 정보를 공유하고 연결할 수 있는 스타트업 커뮤니티 플랫폼”
+
+스타트업에 관심이 있는 사람부터 이미 회사를 운영하는 CEO까지, 모두가 자유롭게 대화하고 필요한 인력을 구하거나 아이디어 피드백을 받을 수 있는 창업 커뮤니티형 웹서비스입니다. 커뮤니티, 외주 매칭, AI 분석이 한 공간에 모인 창업 허브 플랫폼을 지향합니다.
+
+### 해결하고자 하는 문제
+1. **정보의 파편화**: 커뮤니티(카페, 오픈채팅)와 외주 플랫폼(크몽, 위시켓)이 분리되어 있어 이용이 불편합니다.
+2. **객관적 평가 부재**: 초보 창업자들이 아이디어의 시장성이나 경쟁력을 객관적으로 평가받을 기회가 부족합니다.
+
+### 핵심 기능
+1. **💬 커뮤니티 (피드백 네트워크)**
+   - 창업 아이디어, 사업계획, 브랜딩 공유 및 피드백
+   - 직무별/관심사별 게시판 (PM, 개발, 디자인, 투자 등)
+   - 현직 창업자/멘토와의 질의응답
+
+2. **👋🏻 외주 & 인력 구인 플랫폼**
+   - 웹/앱 개발, 디자인, 마케팅 등 외주 등록 및 지원
+   - 신뢰도 기반 인력 추천 및 리뷰 시스템
+
+3. **🗣 AI 분석 및 네트워크 매칭**
+   - 아이디어 분석을 통한 유사 산업/시장 데이터 기반 피드백 리포트
+   - 분석 결과 바탕의 관련 직군/멘토/협업자 자동 매칭
+
+## 🏗️ 아키텍처
+
+- **Fullstack Framework**: Next.js 16 (App Router)
+- **Database**: Supabase (PostgreSQL + Vector)
+- **ORM**: Drizzle ORM
+- **Monorepo**: Turborepo
+- **Styling**: Tailwind CSS
+
+> 💡 자세한 아키텍처 설계 및 기술적 의사결정 내용은 [STRUCTOR.md](./STRUCTOR.md) 파일을 참고하세요.
+
+## 🚀 시작하기 (Getting Started)
+
+이 프로젝트는 **단 한 번의 명령어**로 모든 환경을 세팅할 수 있도록 구성되어 있습니다.
+
+### 1. 필수 요구사항
+- Node.js 20+
+- npm
+
+### 2. 설치 및 실행
 
 ```bash
+# 1. 저장소 클론
+git clone https://github.com/GangWooLee/Startup-Community.git
+cd Startup-Community
+
+# 2. 의존성 설치
+npm install
+
+# 3. 환경 변수 설정
+# apps/web/.env.local 파일을 생성하고 필요한 값을 채워주세요.
+cp apps/web/.env.example apps/web/.env.local
+
+# 4. 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Web App**: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-# -------------------------------------------------
-
-# one-pager
-
-## 아이디어 한 줄 요약
-
-## “누구나 쉽게 창업 정보를 공유하고 연결할 수 있는 스타트업 커뮤니티 플랫
-
-## 폼ˮ
-
-### → 스타트업에 관심이 있는 사람부터 이미 회사를 운영하는 CEO까지, 모두가 자유롭게 대
-
-### 화하고 필요한 인력을 구하거나 아이디어 피드백을 받을 수 있는 창업 커뮤니티형 웹서비스
-
-### → 커뮤니티 + 외주 매칭 + AI 분석 이 한 공간에 모인 창업 허브 플랫폼
-
-## 해결하고자 하는 문제 – 지금 왜 이 문제가 중요한가?
-
-###  현재 창업을 준비하거나 운영하는 사람들은
-
-### ① 정보를 얻기 위한 커뮤니티(예: 카페, 디스코드, 오픈채팅)
-
-### ② 외주나 협업 인력을 찾는 플랫폼(예: 크몽, 위시켓)
-
-### 이 두가지를 따로 이용해야 하는 불편함 이 있다.
-
-### 2) 또한, 초보 창업자들이 자신의 아이디어의 시장성이나 경쟁력을 객관적으로 평가 받
-
-### 을 기회가 거의 없다.
-
-### → 이러한 단절된 정보 접근성을 해결하고, 누구나 쉽게 창업 생태계에 진입할 수 있도
-
-### 록 돕는 하나의 통합된 공간을 제공하려 한다.
-
-###  핵심 아이디어 (기능)
-
-### 커뮤니티 + 외주/인력 구인 + AI분석(피드백/네트워킹 매칭)
-
-**Points**
+## 📁 프로젝트 구조
 
 ```
-기능 구분 주요 내용
+.
+├── apps/
+│   └── web/          # Next.js 풀스택 애플리케이션 (Frontend + Backend)
+├── packages/
+│   ├── db/           # Drizzle ORM & 데이터베이스 스키마
+│   ├── ui/           # 공통 UI 컴포넌트 (Shared Component Library)
+│   └── tsconfig/     # TypeScript 공통 설정
+├── STRUCTOR.md       # 상세 아키텍처 문서
+└── package.json      # Monorepo 루트 설정
 ```
-```
-💬커뮤니티(피드백
-네트워크)
-```
-- 창업 아이디어, 사업계획, 브랜딩 등 자유롭게 공유하고 피드백 받는 공간
-- 직무별/관심사별 게시판 운영 (예: PM·개발·디자인·투자 등)
-- 실제 창업자, 전문가, 멘토와의 질의응답 및 경험 공유 기능
 
-
-```
-기능 구분 주요 내용
-```
-```
-👋🏻외주 & 인력 구인
-플랫폼
-```
-- 크몽처럼 웹/앱 개발, 디자인, 마케팅 등 외주 등록 및 지원 기능
-- 프리랜서 또는 팀 단위로 협업 인력 모집
-- 커뮤니티 내 신뢰도 기반으로 인력 추천 및 리뷰 시스템 제공
-
-```
-🗣AI 분석 및 네트워
-크 매칭
-```
-- 사용자가 입력한 아이디어를 AI가 분석하여 유사 산업·시장 데이터 기반 피
-드백 리포트 제공
-- 분석 결과를 바탕으로 관련 직군/멘토/협업자 자동 매칭 (예: “AI 헬스케어ˮ
-아이디어 → 관련 경험자·전문가 추천)
-- 커뮤니티 참여 데이터 기반으로 “이번 주 함께하면 좋은 파트너ˮ 추천 기능
-
-###  타깃 유저 / 고객
-
-### 대상: 스타트업에 막 관심을 가지기 시작한 대학생부터, 현직 창업가 및 투자자까지
-
-### 상황:
-
-```
-타깃 유저
-```
-```
-구분 설명
-예비 창업자/대학생 아이디어 검증 및 피드백, 외주 인력 탐색
-초기 스타트업 팀 빠른 인력 매칭, 프로젝트 외주
-프리랜서/ 외주 전문가 본인의 기술,역량 홍보하고 돈벌이
-멘토(성공한 창업가)/투자자 VC 초기 아이디어 발굴, 초기 유망 팀 발굴
-```
-###  우리 팀의 강점 – 우리가 해야 하는 이유
-
-### 우리 팀은 기획·개발·AI·비즈니스·네트워킹 역량이 유기적으로 결합된 실전형 창업 팀 이다.
-
-### 1)탄탄한 기술 기반
-
-### 4 명 중 3 명이 이공계 전공자로, 그중 1 명은 인공지능학과, 다른 1 명은컴퓨터과학과로 실제
-
-### 앱 개발 경험을 보유하고 있다.
-
-### 따라서 서비스 초기 단계부터 “AI 기능 설계와 프로토타입 개발(MVP)ˮ을 자체적으로 수행
-
-### 할 수 있는 기술적 역량을 갖추고 있다.
-
-
-### 2)전문적 비즈니스 감각
-
-### 팀원 중 한명은 현재 증권사 재직 중인 직장인으로, 실제 시장 분석 및 투자 구조, 수익모델
-
-### (BM)설계에 대한 이해도가 높아 서비스 런칭 후 전문적인 투자 관점의 기여가 가능하다.
-
-### 3)기획 및 PM중심 역량
-
-### 팀 리더는 다양한 스타트업 프로젝트에서 기획 및 PM 역할을 수행하며, IA·플로우 설계
-
-### ·UI/UX디자인,개발자와 소통경험을 통해 개발자와 디자이너, 마케터 간의 협업 프로세스를
-
-### 정확히 이해하고 있다.
-
-### 따라서 MVP 제작부터 서비스 확장까지 실행 중심의 프로젝트 관리가 가능하다.
-
-### 4)검증된 네트워크와 초기 유저 확보 가능
-
-리더는 YVentures, VERY 창업학회 등 다수의 창업 커뮤니티 및 학회 네트워크를 이미 보
-유하고 있으며,
-
-이를 통해 런칭 직후 대학생 창업자 중심의 초기 유저 확보가 가능하다.
-
-또한 다른 학교 창업동아리 및 실리콘밸리 스타트업 커뮤니티와도 연결되어 있어 테스트베
-드 확보에도 유리하다.
-
-###  (선택) 시장 규모 / 참고 사례
-
-### 참고 사례: 크몽, 브런치, 디스코드 스타트업 서버, 블라인드 스타트업 채널 등
-
-### 차별점: 정보 공유 + 인력 매칭 + AI 평가 기능을 모두 한 공간에서 제공
-
-### AI 유료 서비스: 사용자가 자신의 창업 아이템과 계획을 설명하면,AI가 관련 스타트업 사
-
-### 례와 시장 데이터를 수집해시장 성장 가능성, 경쟁 강도, 유사 서비스 비교 등을 분석하
-
-### 고 점수 및 피드백 리포트 형태로 시각화하여 제공
-
-
+## 👥 팀 소개 (Team)
+기획·개발·AI·비즈니스·네트워킹 역량이 유기적으로 결합된 실전형 창업 팀입니다.
+- **탄탄한 기술 기반**: 이공계 전공자 및 실제 앱 개발 경험 보유
+- **전문적 비즈니스 감각**: 현직 증권사 재직자의 시장 분석 및 BM 설계 역량
+- **기획 및 PM 역량**: 다수의 스타트업 프로젝트 리딩 경험
+- **검증된 네트워크**: 창업 학회 및 커뮤니티 네트워크 보유
